@@ -1,0 +1,32 @@
+{
+    "declesionEnddings":[
+        {
+            "declension":1,
+            "case":"nominative",
+            "number":"singular",
+            "gender":"feminine",
+            "ending":"a"
+        },
+        {
+            "declension":1,
+            "case":"nominative",
+            "number":"singular",
+            "gender":"masculine",
+            "ending":"a"
+        },
+        {
+            "declension":1,
+            "case":"vocative",
+            "number":"singular",
+            "gender":"feminine",
+            "ending":"a"
+        },
+        {
+            "declension":1,
+            "case":"vocative",
+            "number":"singular",
+            "gender":"masculine",
+            "ending":"a"
+        }
+    ]
+}
