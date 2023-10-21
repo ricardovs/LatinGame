@@ -3,7 +3,7 @@ from random import sample
 
 class DeclensionEndingGame:
     def __init__(self):
-        with open('data.json') as file:
+        with open('./data/data.json') as file:
             self.data = json.load(file)['declensionEnddings']
         self.questions = []
         self.waiting_answers = False
@@ -21,7 +21,7 @@ class DeclensionEndingGame:
         text += self.getDeclensionText(question['declension'])
         text += "\n - Case: %s\n" % question['case']
         text += ' - Number: %s\n' % question['number'].title()
-        text += ' - Gender: %s\n' % question['gender'].title()
+        text += ' - Gender: %s' % question['gender'].title()
         return text
 
     def getDeclensionText(self, declension : int):

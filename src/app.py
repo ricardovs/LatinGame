@@ -1,5 +1,5 @@
 import os
-from game import DeclensionEndingGame
+from .game import DeclensionEndingGame
 
 class App():
     def __init__(self):
