@@ -30,14 +30,25 @@ class App():
     def DeclensionPage(self):
         if not self.game.isWaiting():
             self.game.newQuestion()
-            self.clear()
+        self.clear()
         print("This is the guessing page !!")
         print("Give the declension ending for this case (or quit)")
-        print(self.game.getQuestion())
+        print(self.game.getQuestionText())
         option = input("R: ")
         if option == "quit":
             self.status = 'InitialPage'
             return True
-        self.game.addAnswers(option)
-        input("Press Enter to continue (or quit)...")
+        if not self.game.addAnswers(option):
+            print("INVALID ANSWER")
+        elif self.game.isLastAnswerCorrect():
+            print("CORRECT ANSWER")
+            if not self.game.isCompleteAnswer():
+                print("An alternative answer is available.")
+                print("Plese try a new guess for complete answer.")
+            else:
+                self.game.newQuestion()
+        else:
+            print("WRONG ANSWER")
+            print("Try again!")
+        input("Press Enter to continue (or quit)...\n")
         return True

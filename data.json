@@ -1,5 +1,5 @@
 {
-    "declesionEnddings":[
+    "declensionEnddings":[
         {
             "declension":1,
             "case":"nominative",
@@ -13,6 +13,13 @@
             "number":"singular",
             "gender":"masculine",
             "ending":"a"
+        },
+        {
+            "declension":1,
+            "case":"genitive",
+            "number":"singular",
+            "gender":"masculine",
+            "ending":"ae"
         },
         {
             "declension":1,
