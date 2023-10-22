@@ -11,7 +11,7 @@ Remember latin cases' endings !! Under development beta version !!
 <table style="text-align:center;">
 <thead>
   <tr style="text-align:center;">
-    <th colspan="2"></th>
+    <th colspan="2" rowspan="2"></th>
     <th>1st <br>Declension</th>
     <th colspan="2">2nd <br>Declension</th>
     <th colspan="2">3rd <br>Declension</th>
