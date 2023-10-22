@@ -19,7 +19,7 @@ class DeclensionEndingGame:
             return "NO QUESTION"
         text = " - Declension: "
         text += self.getDeclensionText(question['declension'])
-        text += "\n - Case: %s\n" % question['case']
+        text += "\n - Case: %s\n" % question['case'].title()
         text += ' - Number: %s\n' % question['number'].title()
         text += ' - Gender: %s' % question['gender'].title()
         return text
@@ -35,8 +35,18 @@ class DeclensionEndingGame:
             return "%dth" % declension
 
     def newQuestion(self):
-        question = sample(self.data, 1)[0]
+        question = sample(self.data, 1)[0].copy()
         question['answers'] = []
+        question['endings'] = [question.pop('ending')]
+        for value in self.data:
+            if value['case'] != question['case']:
+                continue
+            if value['declension'] != question['declension']:
+                continue
+            if value['gender'] != question['gender']:
+                continue
+            if not value['ending'] in question['endings']:
+                question['endings'].append(value['ending'])
         self.questions.append(question)
         self.waiting_answers = True
 
@@ -48,20 +58,37 @@ class DeclensionEndingGame:
             return False
         if not len(self.questions[-1]['answers']) > 0:
             return False
-        respose = self.questions[-1]['ending']
+        resposes = self.questions[-1]['endings']
         answer = self.questions[-1]['answers'][-1]
-        return answer == respose
+        return answer in resposes
 
-    def addAnswers(self, answer):
+    def addAnswer(self, answer):
         if not self.waiting_answers:
             return False
-        if not answer or answer.isspace():
+        if not self.isValidAnswer(answer):
             return False
         question = self.questions[-1]
-        question['answers'].append(answer)
+        if not answer in question['answers']:
+            question['answers'].append(answer)
         if self.isCompleteAnswer():
             self.waiting_answers = False
         return True
 
+    def isValidAnswer(self, answer):
+        return type(answer) is str and (not answer.isspace())
+
+    def wasAnswerTried(self, answer):
+        if not self.isValidAnswer(answer):
+            return False
+        if not len(self.questions) > 0:
+            return False
+        return answer in self.questions[-1]['answers']
+
     def isCompleteAnswer(self):
-        return self.isLastAnswerCorrect()
+        if not len(self.questions) > 0:
+            return False
+        question = self.questions[-1]
+        for ending in question['endings']:
+            if ending not in question['answers']:
+                return False
+        return True

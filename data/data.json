@@ -34,6 +34,20 @@
             "number":"singular",
             "gender":"masculine",
             "ending":"a"
+        },
+        {
+            "declension":3,
+            "case":"genitive",
+            "number":"plural",
+            "gender":"masculine",
+            "ending":"um"
+        },
+        {
+            "declension":3,
+            "case":"genitive",
+            "number":"plural",
+            "gender":"masculine",
+            "ending":"ium"
         }
     ]
 }
