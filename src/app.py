@@ -64,13 +64,16 @@ class App():
         print("GUESSING PAGE")
         if not self.game.isWaiting():
             self.game.newQuestion()
-        print("Give the declension ending for this case (or back)")
+        print("Give the declension ending for this case (or 'back' or 'answer')")
         print(self.game.getQuestionText())
         option = input("R: ")
         if option == "back":
             self.status = 'InitialPage'
             return True
-        if not self.game.isValidAnswer(option):
+        elif option == 'answer':
+            print(" Answer: " + str(self.game.getAnswers()))
+            self.game.setWaiting(False)
+        elif not self.game.isValidAnswer(option):
             print("INVALID ANSWER")
         elif self.game.wasAnswerTried(option):
             print("ALREADY TRIED")

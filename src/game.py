@@ -45,6 +45,8 @@ class DeclensionEndingGame:
                 continue
             if value['gender'] != question['gender']:
                 continue
+            if value['number'] != question['number']:
+                continue
             if not value['ending'] in question['endings']:
                 question['endings'].append(value['ending'])
         self.questions.append(question)
@@ -83,6 +85,14 @@ class DeclensionEndingGame:
         if not len(self.questions) > 0:
             return False
         return answer in self.questions[-1]['answers']
+
+    def getAnswers(self):
+        if not len(self.questions) > 0:
+            return []
+        return self.questions[-1]['endings']
+
+    def setWaiting(self, waiting):
+        self.waiting_answers = waiting
 
     def isCompleteAnswer(self):
         if not len(self.questions) > 0:
