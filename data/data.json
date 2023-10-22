@@ -10,15 +10,8 @@
         {
             "declension":1,
             "case":"nominative",
-            "number":"singular",
-            "gender":"masculine",
-            "ending":"a"
-        },
-        {
-            "declension":1,
-            "case":"genitive",
-            "number":"singular",
-            "gender":"masculine",
+            "number":"plural",
+            "gender":"feminine",
             "ending":"ae"
         },
         {
@@ -31,9 +24,79 @@
         {
             "declension":1,
             "case":"vocative",
+            "number":"plural",
+            "gender":"feminine",
+            "ending":"ae"
+        },
+        {
+            "declension":1,
+            "case":"genitive",
             "number":"singular",
-            "gender":"masculine",
+            "gender":"feminine",
+            "ending":"ae"
+        },
+        {
+            "declension":1,
+            "case":"genitive",
+            "number":"plural",
+            "gender":"feminine",
+            "ending":"arum"
+        },
+        {
+            "declension":1,
+            "case":"dative",
+            "number":"singular",
+            "gender":"feminine",
+            "ending":"ae"
+        },
+        {
+            "declension":1,
+            "case":"dative",
+            "number":"plural",
+            "gender":"feminine",
+            "ending":"is"
+        },
+        {
+            "declension":1,
+            "case":"dative",
+            "number":"plural",
+            "gender":"feminine",
+            "ending":"abus"
+        },
+        {
+            "declension":1,
+            "case":"ablative",
+            "number":"singular",
+            "gender":"feminine",
             "ending":"a"
+        },
+        {
+            "declension":1,
+            "case":"ablative",
+            "number":"plural",
+            "gender":"feminine",
+            "ending":"is"
+        },
+        {
+            "declension":1,
+            "case":"ablative",
+            "number":"plural",
+            "gender":"feminine",
+            "ending":"abus"
+        },
+        {
+            "declension":1,
+            "case":"accusative",
+            "number":"singular",
+            "gender":"feminine",
+            "ending":"am"
+        },
+        {
+            "declension":1,
+            "case":"accusative",
+            "number":"plural",
+            "gender":"feminine",
+            "ending":"as"
         },
         {
             "declension":3,
