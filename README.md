@@ -171,7 +171,7 @@ Remember latin cases' endings !! Under development beta version !!
 ## Task list and issues
 ```[tasklist]
 - [x] Add 1st declension to dataset
-- [ ] Add 2nd declension to dataset
+- [x] Add 2nd declension to dataset
 - [ ] Add 3rd declension to dataset
 - [ ] Add 4th declension to dataset
 - [ ] Add 5th declension to dataset
