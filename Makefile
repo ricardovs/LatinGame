@@ -2,18 +2,21 @@
 
 #Varibles
 ENV_DIR = venv
-ACTIVATE_MSG = You will have to run: source ./$(ENV_DIR)/bin/activate
 
 #RULES
-run: | $(ENV_DIR)
-	@if [ -z ${VIRTUAL_ENV} ]; then echo "$(ACTIVATE_MSG)"; else python3 main.py; fi
+run: | $(ENV_DIR) requirements.txt
+	@bash run.sh
 
 $(ENV_DIR):
-	python3 -m venv ./$(ENV_DIR)
-	@echo "$(ACTIVATE_MSG)"
+	@python3 -m venv ./$(ENV_DIR)
+	@chmod +x run.sh
+	@chmod +x depends.sh
+	@make depends
 
-depends:
-	@if [ -z ${VIRTUAL_ENV} ]; then echo "$(ACTIVATE_MSG)"; else pip3 install -r requirements.txt; fi
+requirements.txt, depends:
+	@bash depends.sh
 
 clear:
-	@if [ -z ${VIRTUAL_ENV} ]; then rm -r ./$(ENV_DIR); else echo "You will have to run: deactivate"; fi
+	@rm -r ./$(ENV_DIR)
+	@chmod -x run.sh
+	@chmod -x depends.sh

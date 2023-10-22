@@ -1,5 +1,5 @@
 from src.app import App
-
+import thorpy
 def main():
     app = App()
     while app.run():
