@@ -17,22 +17,53 @@ class App():
 
     def InitialPage(self):
         self.clear()
+        print("LATIN GAME")
         print("Welcome to the Latin conjugation game !!")
-        print("Guess declension ending.")
-        option = input("Press Enter to new game or quit ...\n")
+        print("Guess declension ending. Choose command: ")
+        print("  - play      : Start a new game")
+        print("  - report    : Report previous game statistics.")
+        print("  - configure : Configure game options.")
+        print("  - quit      : End game and clear all data.")
+        option = input("Please enter one comand ...\n- ")
         if option == 'quit':
             return False
-        self.status = "DeclensionPage"
-        self.game = DeclensionEndingGame()
+        elif option == 'report':
+            self.status = "ReportPage"
+        elif option == 'configure':
+            self.status = "ConfigPage"
+        elif option == 'play':
+            self.status = "DeclensionPage"
+            self.game = DeclensionEndingGame()
+        else:
+            print("INVALID COMMAND")
+            print("Please try again.")
+            input("Please press Enter to continue ...\n")
         self.clear()
+        return True
+
+    def ConfigPage(self):
+        self.clear()
+        print("CONFIGURATION PAGE")
+        print("Sorry! :(")
+        print("Page under construction ...")
+        input("Please press Enter to continue ...\n")
+        self.status = 'InitialPage'
+        return True
+
+    def ReportPage(self):
+        self.clear()
+        print("REPORT PAGE")
+        print("Sorry! :(")
+        print("Page under construction ...")
+        input("Please press Enter to continue ...\n")
+        self.status = 'InitialPage'
         return True
 
     def DeclensionPage(self):
         self.clear()
-        print("This is the guessing page !!")
+        print("GUESSING PAGE")
         if not self.game.isWaiting():
             self.game.newQuestion()
-            print("NEW QUESTION")
         print("Give the declension ending for this case (or back)")
         print(self.game.getQuestionText())
         option = input("R: ")
@@ -53,7 +84,7 @@ class App():
         else:
             print("WRONG ANSWER")
             print("Try again!")
-        option = input("Press Enter to continue (or back)...\nR: ")
+        option = input("Press Enter to continue (or send 'back' command)...\n")
         if option == "back":
             self.status = 'InitialPage'
             return True
