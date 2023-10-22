@@ -8,6 +8,25 @@
 
 Remember latin cases' endings !! Under development beta version !!
 
+## Philosophy
+Some things to clarify:
+- Latin does not have accents. The macron and the breve are guides to pronuntiation, so they are not part of this dataset.
+- We go after the rule, not the exception, so:
+    - The 1st declension words can be masculine or feminine, but the feminine compresses the majority, so you will only be asked about them as feminine. This may change, but it has not yet.
+    - The 3rd declension Nominative will never be asked (you should know why).
+
+## Task list and issues
+```[tasklist]
+- [x] Add 1st declension to dataset
+- [ ] Add 2nd declension to dataset
+- [ ] Add 3rd declension to dataset
+- [ ] Add 4th declension to dataset
+- [ ] Add 5th declension to dataset
+- [ ] Chart showing the case endings that were added
+- [ ] Add report page
+- [ ] Add configuration page
+```
+
 ## Running and Playing
 The game was developed to run on a Linux distro. Keep in mind.
 
