@@ -8,12 +8,165 @@
 
 Remember latin cases' endings !! Under development beta version !!
 
-## Philosophy
-Some things to clarify:
-- Latin does not have accents. The macron and the breve are guides to pronuntiation, so they are not part of this dataset.
-- We go after the rule, not the exception, so:
-    - The 1st declension words can be masculine or feminine, but the feminine compresses the majority, so you will only be asked about them as feminine. This may change, but it has not yet.
-    - The 3rd declension Nominative will never be asked (you should know why).
+<table style="text-align:center;">
+<thead>
+  <tr style="text-align:center;">
+    <th colspan="2"></th>
+    <th>1st <br>Declension</th>
+    <th colspan="2">2nd <br>Declension</th>
+    <th colspan="2">3rd <br>Declension</th>
+    <th colspan="2">4th <br>Declension</th>
+    <th>5th <br>Declension</th>
+  </tr>
+</thead>
+<tbody style="border-bottom:1px solid;">
+  <tr>
+    <td colspan="2"></td>
+    <td>F</td>
+    <td>M</td>
+    <td>N</td>
+    <td>M/F</td>
+    <td>N</td>
+    <td>M</td>
+    <td>N</td>
+    <td>F</td>
+  </tr>
+  <tr>
+    <td rowspan="6">SIN</td>
+    <td>VOC</td>
+    <td>a</td>
+    <td>us</td>
+    <td>um</td>
+    <td>--</td>
+    <td>--</td>
+    <td>us</td>
+    <td>&umacr;</td>
+    <td>&emacr;s</td>
+  </tr>
+  <tr>
+    <td>NOM</td>
+    <td>a</td>
+    <td>us</td>
+    <td>um</td>
+    <td>--</td>
+    <td>--</td>
+    <td>us</td>
+    <td>&umacr;</td>
+    <td>&emacr;s</td>
+  </tr>
+  <tr>
+    <td>GEN</td>
+    <td>ae</td>
+    <td>&imacr;</td>
+    <td>&imacr;</td>
+    <td>is</td>
+    <td>is</td>
+    <td>&umacr;s</td>
+    <td>&umacr;s</td>
+    <td>&emacr;&imacr;/e</td>
+  </tr>
+  <tr>
+    <td>DAT</td>
+    <td>ae</td>
+    <td>&omacr;</td>
+    <td>&omacr;</td>
+    <td>&imacr;</td>
+    <td>&imacr;</td>
+    <td>u&imacr;/&umacr;</td>
+    <td>&umacr;</td>
+    <td>&emacr;&imacr;/e</td>
+  </tr>
+  <tr>
+    <td>ABL</td>
+    <td>&amacr;</td>
+    <td>&omacr;</td>
+    <td>&omacr;</td>
+    <td>e/&imacr;</td>
+    <td>e/&imacr;</td>
+    <td>&umacr;</td>
+    <td>&umacr;</td>
+    <td>&emacr;</td>
+  </tr>
+  <tr>
+    <td>ACC</td>
+    <td>am</td>
+    <td>um</td>
+    <td>um</td>
+    <td>em/im</td>
+    <td>--</td>
+    <td>um</td>
+    <td>&umacr;</td>
+    <td>em</td>
+  </tr>
+  <tr>
+    <td rowspan="6">PLU</td>
+    <td>VOC</td>
+    <td>ae</td>
+    <td>&imacr;</td>
+    <td>a</td>
+    <td>&emacr;s</td>
+    <td>a/ia</td>
+    <td>&umacr;s</td>
+    <td>ua</td>
+    <td>&emacr;s</td>
+  </tr>
+  <tr>
+    <td>NOM</td>
+    <td>ae</td>
+    <td>&imacr;</td>
+    <td>a</td>
+    <td>&emacr;s</td>
+    <td>a/ia</td>
+    <td>&umacr;s</td>
+    <td>ua</td>
+    <td>&emacr;s</td>
+  </tr>
+  <tr>
+    <td>GEN</td>
+    <td>&amacr;rum</td>
+    <td>&omacr;rum</td>
+    <td>&omacr;rum</td>
+    <td>um/ium</td>
+    <td>um/ium</td>
+    <td>uum</td>
+    <td>uum</td>
+    <td>&emacr;rum</td>
+  </tr>
+  <tr>
+    <td>DAT</td>
+    <td>&imacr;s/abus</td>
+    <td>&imacr;s</td>
+    <td>&imacr;s</td>
+    <td>ibus</td>
+    <td>ibus</td>
+    <td>ibus/ubus</td>
+    <td>ibus/ubus</td>
+    <td>&emacr;bus</td>
+  </tr>
+  <tr>
+    <td>ABL</td>
+    <td>&imacr;s/abus</td>
+    <td>&imacr;s</td>
+    <td>&imacr;s</td>
+    <td>ibus</td>
+    <td>ibus</td>
+    <td>ibus/ubus</td>
+    <td>ibus/ubus</td>
+    <td>&emacr;bus</td>
+  </tr>
+  <tr>
+    <td>ACC</td>
+    <td>&amacr;s</td>
+    <td>&omacr;s</td>
+    <td>a</td>
+    <td>&emacr;s/&imacr;s</td>
+    <td>a/ia</td>
+    <td>&umacr;s</td>
+    <td>ua</td>
+    <td>&emacr;s</td>
+  </tr>
+</tbody>
+</table>
 
 ## Task list and issues
 ```[tasklist]
@@ -22,7 +175,7 @@ Some things to clarify:
 - [ ] Add 3rd declension to dataset
 - [ ] Add 4th declension to dataset
 - [ ] Add 5th declension to dataset
-- [ ] Chart showing the case endings that were added
+- [x] Table showing the case endings
 - [ ] Add report page
 - [ ] Add configuration page
 ```
